@@ -1,0 +1,10 @@
+{
+	"id": "com.mycompany.wordfinder",
+	"version": "1.0.0",
+	"vendor": "My Company",
+	"type": "web",
+	"main": "index.html",
+	"title": "WordFinderEnyo",
+	"icon": "icon.png"
+	"uiRevision": "2"
+}
