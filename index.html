@@ -11,7 +11,12 @@
 	var wordFinder = new MyApps.WordFinder();
 	wordFinder.init();
 	wordFinder.renderInto(document.body);
-	//new enyo.Control({content: "Hello From Enyo"}).write();
+	
+	// tell the app we're ready
+	if(enyo.platform.webos)
+	{
+		window.PalmSystem.stageReady();
+	}
 </script>
 </body>
 </html>
