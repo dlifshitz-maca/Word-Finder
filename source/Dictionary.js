@@ -17,7 +17,7 @@ enyo.kind
 					method: "GET",
 					respond: function(data)
 					{
-						that.wordsArray = data.split("\r\n");
+						that.wordsArray = data.split("\n");
 					},
 				}
 			);
@@ -31,7 +31,7 @@ enyo.kind
 					method: "GET",
 					respond: function(data)
 					{
-						that.wordsCharNumsArray = data.split("\r\n");
+						that.wordsCharNumsArray = data.split("\n");
 					},
 				}
 			);
