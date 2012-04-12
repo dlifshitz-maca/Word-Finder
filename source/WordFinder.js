@@ -2,7 +2,7 @@ enyo.kind
 (
 	{
 		name: "MyApps.WordFinder",
-		//kind: "FittableRows",
+		kind: "FittableRows",
 		classes: "onyx",
 		components:
 		[
@@ -31,25 +31,10 @@ enyo.kind
 				],
 			},
 			{
-				tag: "div",
+				kind: "enyo.Scroller",
+				fit: true,
 				name: "answers"
 			},
-			/*{
-				kind: "enyo.Scroller",
-				fit: true,
-				components:
-				[
-					{
-						tag: "div",
-						name: "answers",
-					},
-				],
-			},*/
-			/*{
-				kind: "enyo.Scroller",
-				fit: true,
-				name: "answers"
-			},*/
 		],
 		dictionary: undefined,
 		wordGenerator: undefined,
