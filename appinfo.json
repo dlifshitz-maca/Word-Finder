@@ -5,6 +5,6 @@
 	"type": "web",
 	"main": "index.html",
 	"title": "WordFinderEnyo",
-	"icon": "icon.png"
+	"icon": "icon.png",
 	"uiRevision": "2"
 }
