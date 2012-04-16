@@ -24,8 +24,9 @@ enyo.kind
 								name: "lettersInput",
 								placeholder: "Find words",
 								fit: true,
-								style: "font-size: 20px;",
+								style: "font-size: 20px; text-transform: uppercase;",
 								onkeydown: "findOnEnter",
+								onkeypress: "filterInput",
 								defaultFocus: true,
 							},
 							{
@@ -41,7 +42,7 @@ enyo.kind
 			{
 				kind: "enyo.Scroller",
 				fit: true,
-				style: "margin: 10px;",
+				style: "margin: 10px; text-transform: uppercase;",
 				name: "answers"
 			},
 		],
@@ -61,6 +62,25 @@ enyo.kind
 			{
 				this.findWords();
 				return true;
+			}
+		},
+		filterInput: function(inSender, inEvent)
+		{
+			if(inEvent.charCode)
+			{
+				var c = String.fromCharCode(inEvent.charCode);
+				if(c == ' '
+					|| (c >= 'A' && c <= 'Z')
+					|| (c >= 'a' && c <= 'z'))
+				{
+					// allow character
+				}
+				else
+				{
+					// deny character
+					inEvent.preventDefault();
+					return false;
+				}
 			}
 		},
 		findWords: function()
