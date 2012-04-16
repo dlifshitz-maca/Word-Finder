@@ -112,21 +112,11 @@ enyo.kind
 				this.createComponent
 				(
 					{
-						content: "Found " + words.length + " words:",
+						allowHtml: true,
+						content: "Found " + words.length + " words:<br>" + words.join("<br>"),
 						container: this.$.answers,
 					}
 				);
-
-				for(var i = 0; i < words.length; i++)
-				{
-					this.createComponent
-					(
-						{
-							content: words[i],
-							container: this.$.answers,
-						}
-					);
-				}
 			}
 			else
 			{
