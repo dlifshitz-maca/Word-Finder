@@ -24,6 +24,7 @@ enyo.kind
 								name: "lettersInput",
 								placeholder: "Find words",
 								fit: true,
+								style: "font-size: 20px;",
 								onkeydown: "findOnEnter",
 								defaultFocus: true,
 							},
@@ -40,6 +41,7 @@ enyo.kind
 			{
 				kind: "enyo.Scroller",
 				fit: true,
+				style: "margin: 10px;",
 				name: "answers"
 			},
 		],
