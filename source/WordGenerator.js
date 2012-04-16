@@ -34,7 +34,7 @@ enyo.kind
 			this.numWords = this.dictionary.wordsArray.length;
 			this.increment = Math.floor(this.numWords / 100);
 			this.fromIndex = 0;
-			this.toIndex = -1;// TODO: check: should be 0 or -1 (probably -1 so fromIndex becomes 0 on first run)
+			this.toIndex = -1;
 			
 			/*MainAssistant.answersTextField.mojo.setValue("Finding...");
 			this.controller.get('scroller1').mojo.scrollTo(undefined, 0);*/
