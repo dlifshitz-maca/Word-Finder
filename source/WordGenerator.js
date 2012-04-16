@@ -34,7 +34,7 @@ enyo.kind
 			this.numWords = this.dictionary.wordsArray.length;
 			this.increment = Math.floor(this.numWords / 100);
 			this.fromIndex = 0;
-			this.toIndex = 0;
+			this.toIndex = -1;// TODO: check: should be 0 or -1 (probably -1 so fromIndex becomes 0 on first run)
 			
 			/*MainAssistant.answersTextField.mojo.setValue("Finding...");
 			this.controller.get('scroller1').mojo.scrollTo(undefined, 0);*/
@@ -62,6 +62,31 @@ enyo.kind
 			this.findWords(this.letters, this.lettersCharNums, this.minLen, this.fromIndex, this.toIndex);
 			enyo.asyncMethod(this, this.findWorker);
 		},
+		/*
+		// Use this findWords instead to generate the wordsCharNumsArray_zeroed file
+		findWords: function(letters, lettersCharNums, minLen, fromIndex, toIndex)
+		{
+			var words = this.dictionary.wordsArray;
+			var wordsCharNumsArray = this.dictionary.wordsCharNumsArray;
+			for(var i = fromIndex; i <= toIndex; i++)
+			{
+				var word = words[i];
+				var wordCharNumsArray = wordsCharNumsArray[i];
+				for(var j = 0; j < word.length - 1; j++)
+				{
+					var c = word.charAt(j);
+					var anotherIndex = word.indexOf(c, j + 1);
+					if(anotherIndex != -1)
+					{
+						wordCharNumsArray =
+							wordCharNumsArray.substring(0, anotherIndex)
+							+ '0'
+							+ wordCharNumsArray.substring(anotherIndex + 1);
+					}
+				}
+				this.words.push(wordCharNumsArray);
+			}
+		},*/
 		findWords: function(letters, lettersCharNums, minLen, fromIndex, toIndex)
 		{
 			//enyo.log("find from", fromIndex, "to", toIndex);
@@ -76,13 +101,22 @@ enyo.kind
 				}
 				var wordCharNumsArray = wordsCharNumsArray[i];
 				var valid = true;
+				var availableBlanks = lettersCharNums.blanks;
 				for(var j = 0; j < word.length; j++)
 				{
 					var c = word.charAt(j);
-					if(wordCharNumsArray.charAt(j) > lettersCharNums[c])
+					var numMissingChars = wordCharNumsArray.charAt(j) - lettersCharNums[c];
+					if(numMissingChars > 0)
 					{
-						valid = false;
-						break;
+						if(numMissingChars > availableBlanks)
+						{
+							valid = false;
+							break;
+						}
+						else
+						{
+							availableBlanks -= numMissingChars;
+						}
 					}
 				}
 				if(valid)
