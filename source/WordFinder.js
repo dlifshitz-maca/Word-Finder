@@ -9,12 +9,14 @@ enyo.kind
 			{
 				kind: "onyx.Toolbar",
 				layoutKind: "FittableColumnsLayout",
+				style: "padding-right: 20px;",
 				components:
 				[
 					{
 						kind: "onyx.InputDecorator",
 						layoutKind: "FittableColumnsLayout",
 						fit: true,
+						style: "padding-top: 10px;",
 						components:
 						[
 							{
@@ -26,8 +28,9 @@ enyo.kind
 								defaultFocus: true,
 							},
 							{
-								kind: "Image",
+								kind: "onyx.IconButton",
 								src: "search-input-search.png",
+								style: "height: 20px; width: 20px;",
 								ontap: "findWords",
 							},
 						],
