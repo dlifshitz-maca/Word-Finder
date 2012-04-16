@@ -8,16 +8,20 @@ enyo.kind
 		[
 			{
 				kind: "onyx.Toolbar",
+				layoutKind: "FittableColumnsLayout",
 				components:
 				[
 					{
 						kind: "onyx.InputDecorator",
+						layoutKind: "FittableColumnsLayout",
+						fit: true,
 						components:
 						[
 							{
 								kind: "onyx.Input",
-								name: "lettersInput", 
+								name: "lettersInput",
 								placeholder: "Find words",
+								fit: true,
 								onkeydown: "findOnEnter",
 								defaultFocus: true,
 							},
