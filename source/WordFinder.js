@@ -43,7 +43,15 @@ enyo.kind
 				kind: "enyo.Scroller",
 				fit: true,
 				style: "margin: 10px; text-transform: uppercase;",
-				name: "answers"
+				name: "answers",
+				components:
+				[
+					{
+						allowHtml: true,
+						style: "text-transform: none;",
+						content: "Made possible by the awesome people at <a href=\"http://www.macadamian.com\">www.macadamian.com</a>",
+					},
+				],
 			},
 		],
 		dictionary: undefined,
