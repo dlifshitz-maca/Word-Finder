@@ -85,8 +85,6 @@ enyo.kind
 		},
 		findWords: function()
 		{
-			// TODO: MainAssistant.answersTextField.mojo.setValue("Finding...");
-			// TODO: this.controller.get('scroller1').mojo.scrollTo(undefined, 0);
 			var letters = this.$.lettersInput.getValue().toLowerCase();
 			this.wordGenerator.start(letters);
 		},

@@ -35,9 +35,6 @@ enyo.kind
 			this.increment = Math.floor(this.numWords / 100);
 			this.fromIndex = 0;
 			this.toIndex = -1;
-			
-			/*MainAssistant.answersTextField.mojo.setValue("Finding...");
-			this.controller.get('scroller1').mojo.scrollTo(undefined, 0);*/
 
 			var len = this.letters.length;
 			if(len < this.minLen)

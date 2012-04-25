@@ -65,11 +65,5 @@ enyo.kind
 			}
 			return charNums;
 		},
-		/*
-		spellcheck: function(word)
-		{
-			return this.words[word] !== undefined;
-		},
-		*/
 	}
 );
