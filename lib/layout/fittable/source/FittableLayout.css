@@ -1,9 +1,10 @@
-﻿.enyo-fittable-rows-layout {
+.enyo-fittable-rows-layout {
 	position: relative;
 }
 
 .enyo-fittable-rows-layout > * {
 	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	/* float when not stretched */
 	float: left;
@@ -39,10 +40,15 @@
 
 .enyo-fittable-columns-layout > * {
 	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	vertical-align: top;
 	display: inline-block;
 	white-space: normal;
+}
+
+.enyo-fittable-columns-layout.enyo-tool-decorator > * {
+	vertical-align: middle;
 }
 
 /* repair clobbered white-space setting for pre, code */
